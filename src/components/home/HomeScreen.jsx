@@ -27,7 +27,7 @@ export const HomeScreen = () => {
                )
             :
                (
-                  <div className="results">
+                  <div className="card-content">
                      <CharacterList  personajes = {results}/>
                   </div>
                )

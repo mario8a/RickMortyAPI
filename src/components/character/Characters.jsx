@@ -22,7 +22,7 @@ export const Characters = ({history}) => {
 
    return (
       <div>
-         <h1>Characters </h1>
+         <h1>Character</h1>
          <hr/>
          {
             loading
@@ -34,20 +34,22 @@ export const Characters = ({history}) => {
                )
             :
                (
-                  <div className="info-personaje">
-                     <div className="personaje-imagen">
-                        <img src={image} alt={name}/>
-                     </div>
-                     <div className="personaje-info">
-                        <h1>Nombre: {name}</h1>
-                        <h5>Especie: {species}</h5>
-                        <h5>Status: {status}</h5>
-                        <button 
-                           className="btn btn-outline-primary mt-5"
-                           onClick={handleBack}
-                           >
-                           Back
-                        </button>
+                  <div className="card mb-3 card-info animate__animated animate__bounceInLeft">
+                     <div className="row no-gutters">
+                        <div className="col-md-4">
+                           <img src={image} className="card-img" alt="..."/>
+                        </div>
+                        <div className="col-md-8">
+                           <div className="card-body">
+                           <h5 className="card-title">Nombre: {name}</h5>
+                           <p className="card-text">Especie: {species}</p>
+                           <p className="card-text">Status: {status}</p>
+                           <button className="btn btn-outline-primary" onClick={handleBack}>
+                              Back
+                           </button>
+                           </div>
+                        </div>
+                        
                      </div>
                   </div>
                )
