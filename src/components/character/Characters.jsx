@@ -2,14 +2,23 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useFetchFromApi } from '../../hooks/useFetch';
 
-export const Characters = () => {
+export const Characters = ({history}) => {
 
    const {charaterId} = useParams()
-   console.log(charaterId);
+   // console.log(charaterId);
 
    const {loading , data} = useFetchFromApi(`https://rickandmortyapi.com/api/character/${charaterId}`);
    const {name, image, species, status} = !!data && data;
-   // console.log(name);
+
+   const handleBack = () => {
+
+      if(history.length <= 2) {
+         history.push('/home')
+      } else {
+         history.goBack()
+      }
+
+   }
 
    return (
       <div>
@@ -33,6 +42,12 @@ export const Characters = () => {
                         <h1>Nombre: {name}</h1>
                         <h5>Especie: {species}</h5>
                         <h5>Status: {status}</h5>
+                        <button 
+                           className="btn btn-outline-primary mt-5"
+                           onClick={handleBack}
+                           >
+                           Back
+                        </button>
                      </div>
                   </div>
                )
