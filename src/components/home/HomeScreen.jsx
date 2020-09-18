@@ -4,22 +4,14 @@ import { useFetchFromApi } from '../../hooks/useFetch';
 
 export const HomeScreen = () => {
    // https://rickandmortyapi.com/api/character/
+   
+   //Este si funciono, es con async y await la ṕeticion
+   // const [state, loading] = useFetchFromApi('https://rickandmortyapi.com/api/character/');
+   // const {results} = !!state && state;
 
-   // useEffect(() => {
-
-   //    const consultarAPI = async() => {
-   //       const url = `https://rickandmortyapi.com/api/character/`;
-   //       const data = await fetch(url);
-   //       const personajes = await data.json();
-
-   //       guardarPersonajes(personajes.results);
-   //    }
-
-   //    consultarAPI();
-   // },[])
-
-   const [state, loading] = useFetchFromApi('https://rickandmortyapi.com/api/character/');
-   const {results} = !!state && state;
+   //Sin async y await, del curso de fernando herrera
+   const {loading, data} =useFetchFromApi('https://rickandmortyapi.com/api/character/')
+   const {results} = !!data && data;
 
    return (
       <div>

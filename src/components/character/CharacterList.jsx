@@ -2,7 +2,7 @@ import React from 'react';
 import { CharacterCard } from './CharacterCard';
 
 export const CharacterList = ({personajes}) => {
-   console.log(personajes);
+   // console.log(personajes);
    return (
       <>
          {personajes.map(personaje => (

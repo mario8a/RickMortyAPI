@@ -57,3 +57,29 @@ footer h5 {
 footer .name-character {
    font-size: 1rem;
 }
+
+/* Info personajes */
+
+.info-personaje {
+   margin: 5px 5px;
+   display: flex;
+   flex-direction: column;
+}
+
+.info-personaje h1 {
+   margin-top: .5rem;
+   font-size: 1.8rem;
+}
+
+.personaje-imagen img{
+   border-radius: 20px;
+}
+
+@media( min-width: 768px) {
+   .info-personaje {
+      display: flex;
+      justify-content: space-evenly;
+      flex-direction: row;
+   }
+   
+}
